@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 
 
 
-class CoinInfoListOfData (
+data class CoinInfoListOfData (
     @SerializedName("Data")
     @Expose
     private val data: List<Datum>? = null
