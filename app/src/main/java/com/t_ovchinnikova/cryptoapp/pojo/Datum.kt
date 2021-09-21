@@ -9,6 +9,5 @@ import com.google.gson.annotations.SerializedName
 
 data class Datum (
     @SerializedName("CoinInfo")
-    @Expose
-    private val coinInfo: CoinInfo? = null
+    @Expose val coinInfo: CoinInfo? = null
 )
