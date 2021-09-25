@@ -1,9 +1,8 @@
 package com.t_ovchinnikova.cryptoapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.t_ovchinnikova.cryptoapp.adapters.CoinInfoAdapter
 import com.t_ovchinnikova.cryptoapp.databinding.ActivityCoinPriceListBinding
@@ -14,24 +13,34 @@ class CoinPriceListActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CoinViewModel
     private lateinit var binding: ActivityCoinPriceListBinding
+    private lateinit var coinInfoAdapter: CoinInfoAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCoinPriceListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val adapter = CoinInfoAdapter(this)
-        /*adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
-            override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
-                TODO("Not yet implemented")
-            }
-        }*/
-        binding.rvCoinPriceList.adapter = adapter
-        viewModel = ViewModelProvider(this) [CoinViewModel::class.java]
-        viewModel.getDetailInfo("BTC").observe(this) {
-            Log.d("MyLog", "Success of activity: $it")
-        }
+        setupRecyclerView()
+        setupViewModel()
+    }
+
+    private fun setupViewModel() {
+        viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
         viewModel.priceList.observe(this) {
-            adapter.submitList(it)
+            coinInfoAdapter.submitList(it)
         }
+    }
+
+    private fun setupRecyclerView() {
+        coinInfoAdapter = CoinInfoAdapter(this)
+        coinInfoAdapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
+            override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
+                val intent = CoinDetailActivity.newIntent(
+                    this@CoinPriceListActivity,
+                    coinPriceInfo.fromSymbol
+                )
+                startActivity(intent)
+            }
+        }
+        binding.rvCoinPriceList.adapter = coinInfoAdapter
     }
 }
