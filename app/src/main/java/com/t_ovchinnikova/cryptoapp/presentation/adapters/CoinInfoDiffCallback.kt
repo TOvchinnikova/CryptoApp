@@ -1,4 +1,4 @@
-package com.t_ovchinnikova.cryptoapp.presentation
+package com.t_ovchinnikova.cryptoapp.presentation.adapters
 
 import androidx.recyclerview.widget.DiffUtil
 import com.t_ovchinnikova.cryptoapp.data.network.model.CoinInfoDto

@@ -8,8 +8,6 @@ import com.squareup.picasso.Picasso
 import com.t_ovchinnikova.cryptoapp.R
 import com.t_ovchinnikova.cryptoapp.databinding.ItemCoinInfoBinding
 import com.t_ovchinnikova.cryptoapp.domain.CoinInfo
-import com.t_ovchinnikova.cryptoapp.presentation.CoinInfoDiffCallback
-import com.t_ovchinnikova.cryptoapp.presentation.CoinInfoViewHolder
 
 
 class CoinInfoAdapter(private val context: Context) : ListAdapter<CoinInfo, CoinInfoViewHolder>(

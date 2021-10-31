@@ -44,5 +44,6 @@ class CoinPriceListActivity : AppCompatActivity() {
             }
         }
         binding.rvCoinPriceList.adapter = coinInfoAdapter
+        binding.rvCoinPriceList.itemAnimator = null
     }
 }

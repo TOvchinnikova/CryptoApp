@@ -1,4 +1,4 @@
-package com.t_ovchinnikova.cryptoapp.presentation
+package com.t_ovchinnikova.cryptoapp.presentation.adapters
 
 import android.view.View
 import android.widget.ImageView
