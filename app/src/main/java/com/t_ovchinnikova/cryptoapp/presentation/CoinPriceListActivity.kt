@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.t_ovchinnikova.cryptoapp.presentation.adapters.CoinInfoAdapter
 import com.t_ovchinnikova.cryptoapp.databinding.ActivityCoinPriceListBinding
-import com.t_ovchinnikova.cryptoapp.data.model.CoinPriceInfo
+import com.t_ovchinnikova.cryptoapp.data.network.model.CoinInfoDto
+import com.t_ovchinnikova.cryptoapp.domain.CoinInfo
 
 
 class CoinPriceListActivity : AppCompatActivity() {
@@ -24,7 +25,7 @@ class CoinPriceListActivity : AppCompatActivity() {
 
     private fun setupViewModel() {
         viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
-        viewModel.priceList.observe(this) {
+        viewModel.coinInfoList.observe(this) {
             coinInfoAdapter.submitList(it)
         }
     }
@@ -32,7 +33,7 @@ class CoinPriceListActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         coinInfoAdapter = CoinInfoAdapter(this)
         coinInfoAdapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
-            override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
+            override fun onCoinClick(coinPriceInfo: CoinInfo) {
                 val intent = CoinDetailActivity.newIntent(
                     this@CoinPriceListActivity,
                     coinPriceInfo.fromSymbol

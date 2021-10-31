@@ -1,4 +1,4 @@
-package com.t_ovchinnikova.cryptoapp.data.model
+package com.t_ovchinnikova.cryptoapp.data.network.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -6,10 +6,10 @@ import com.google.gson.annotations.Expose
 
 import com.google.gson.annotations.SerializedName
 import com.t_ovchinnikova.cryptoapp.data.network.ApiFactory.BASE_IMAGE_URL
-import com.t_ovchinnikova.cryptoapp.utils.convertTimestampToFile
+import com.t_ovchinnikova.cryptoapp.utils.convertTimestampToTime
 
 @Entity(tableName = "full_price_list")
-data class CoinPriceInfo (
+data class CoinInfoDto (
     @SerializedName("TYPE")
     @Expose
     val type: String? = null,
@@ -153,7 +153,7 @@ data class CoinPriceInfo (
     val imageUrl: String? = null
 ) {
     fun getFormattedTime(): String {
-        return convertTimestampToFile(lastUpdate)
+        return convertTimestampToTime(lastUpdate)
     }
 
     fun getFullImageUrl(): String {

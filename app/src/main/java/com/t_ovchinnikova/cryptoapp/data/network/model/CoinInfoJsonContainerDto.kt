@@ -1,15 +1,12 @@
-package com.t_ovchinnikova.cryptoapp.data.model
+package com.t_ovchinnikova.cryptoapp.data.network.model
 
 import com.google.gson.JsonObject
 import com.google.gson.annotations.Expose
 
 import com.google.gson.annotations.SerializedName
 
-
-
-
-data class CoinPriceInfoRawDate (
+data class CoinInfoJsonContainerDto (
     @SerializedName("RAW")
     @Expose
-    var coinPriceJsonRawObject: JsonObject? = null
+    var json: JsonObject? = null
 )
