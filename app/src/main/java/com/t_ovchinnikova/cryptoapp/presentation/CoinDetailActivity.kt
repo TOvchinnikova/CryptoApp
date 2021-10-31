@@ -1,14 +1,13 @@
-package com.t_ovchinnikova.cryptoapp
+package com.t_ovchinnikova.cryptoapp.presentation
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import com.squareup.picasso.Picasso
 import com.t_ovchinnikova.cryptoapp.databinding.ActivityCoinDetailBinding
-import com.t_ovchinnikova.cryptoapp.pojo.CoinPriceInfo
+import com.t_ovchinnikova.cryptoapp.data.model.CoinPriceInfo
 
 class CoinDetailActivity : AppCompatActivity() {
 

@@ -1,9 +1,10 @@
-package com.t_ovchinnikova.cryptoapp
+package com.t_ovchinnikova.cryptoapp.presentation
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.t_ovchinnikova.cryptoapp.R
 
 class CoinInfoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     var ivLogoCoin = view.findViewById<ImageView>(R.id.ivLogoCoin)

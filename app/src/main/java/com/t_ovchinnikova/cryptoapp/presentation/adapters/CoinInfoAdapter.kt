@@ -1,17 +1,18 @@
-package com.t_ovchinnikova.cryptoapp.adapters
+package com.t_ovchinnikova.cryptoapp.presentation.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.squareup.picasso.Picasso
-import com.t_ovchinnikova.cryptoapp.CoinInfoDiffCallback
-import com.t_ovchinnikova.cryptoapp.CoinInfoViewHolder
+import com.t_ovchinnikova.cryptoapp.presentation.CoinInfoDiffCallback
+import com.t_ovchinnikova.cryptoapp.presentation.CoinInfoViewHolder
 import com.t_ovchinnikova.cryptoapp.R
-import com.t_ovchinnikova.cryptoapp.pojo.CoinPriceInfo
+import com.t_ovchinnikova.cryptoapp.data.model.CoinPriceInfo
 
 
-class CoinInfoAdapter(private val context: Context) : ListAdapter<CoinPriceInfo, CoinInfoViewHolder>(CoinInfoDiffCallback()) {
+class CoinInfoAdapter(private val context: Context) : ListAdapter<CoinPriceInfo, CoinInfoViewHolder>(
+    CoinInfoDiffCallback()) {
 
     var onCoinClickListener: OnCoinClickListener? = null
 

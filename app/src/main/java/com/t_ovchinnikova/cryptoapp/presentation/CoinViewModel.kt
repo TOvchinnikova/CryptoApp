@@ -1,14 +1,14 @@
-package com.t_ovchinnikova.cryptoapp
+package com.t_ovchinnikova.cryptoapp.presentation
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.google.gson.Gson
-import com.t_ovchinnikova.cryptoapp.api.ApiFactory
-import com.t_ovchinnikova.cryptoapp.database.AppDatabase
-import com.t_ovchinnikova.cryptoapp.pojo.CoinPriceInfo
-import com.t_ovchinnikova.cryptoapp.pojo.CoinPriceInfoRawDate
+import com.t_ovchinnikova.cryptoapp.data.network.ApiFactory
+import com.t_ovchinnikova.cryptoapp.data.database.AppDatabase
+import com.t_ovchinnikova.cryptoapp.data.model.CoinPriceInfo
+import com.t_ovchinnikova.cryptoapp.data.model.CoinPriceInfoRawDate
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import java.util.concurrent.TimeUnit

@@ -1,4 +1,4 @@
-package com.t_ovchinnikova.cryptoapp.api
+package com.t_ovchinnikova.cryptoapp.data.network
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory

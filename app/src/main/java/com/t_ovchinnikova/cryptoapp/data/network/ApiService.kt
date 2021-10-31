@@ -1,7 +1,7 @@
-package com.t_ovchinnikova.cryptoapp.api
+package com.t_ovchinnikova.cryptoapp.data.network
 
-import com.t_ovchinnikova.cryptoapp.pojo.CoinInfoListOfData
-import com.t_ovchinnikova.cryptoapp.pojo.CoinPriceInfoRawDate
+import com.t_ovchinnikova.cryptoapp.data.model.CoinInfoListOfData
+import com.t_ovchinnikova.cryptoapp.data.model.CoinPriceInfoRawDate
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

@@ -1,11 +1,11 @@
-package com.t_ovchinnikova.cryptoapp.pojo
+package com.t_ovchinnikova.cryptoapp.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 
 import com.google.gson.annotations.SerializedName
-import com.t_ovchinnikova.cryptoapp.api.ApiFactory.BASE_IMAGE_URL
+import com.t_ovchinnikova.cryptoapp.data.network.ApiFactory.BASE_IMAGE_URL
 import com.t_ovchinnikova.cryptoapp.utils.convertTimestampToFile
 
 @Entity(tableName = "full_price_list")

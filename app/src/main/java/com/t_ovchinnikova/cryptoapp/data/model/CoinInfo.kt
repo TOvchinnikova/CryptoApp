@@ -1,4 +1,4 @@
-package com.t_ovchinnikova.cryptoapp.pojo
+package com.t_ovchinnikova.cryptoapp.data.model
 
 import com.google.gson.annotations.Expose
 
