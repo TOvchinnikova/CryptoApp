@@ -2,7 +2,6 @@ package com.t_ovchinnikova.cryptoapp.data.network
 
 import com.t_ovchinnikova.cryptoapp.data.network.model.CoinNamesListDto
 import com.t_ovchinnikova.cryptoapp.data.network.model.CoinInfoJsonContainerDto
-import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
