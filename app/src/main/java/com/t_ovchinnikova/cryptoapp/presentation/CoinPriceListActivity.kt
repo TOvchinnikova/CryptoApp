@@ -8,18 +8,29 @@ import com.t_ovchinnikova.cryptoapp.presentation.adapters.CoinInfoAdapter
 import com.t_ovchinnikova.cryptoapp.databinding.ActivityCoinPriceListBinding
 import com.t_ovchinnikova.cryptoapp.data.network.model.CoinInfoDto
 import com.t_ovchinnikova.cryptoapp.domain.CoinInfo
+import javax.inject.Inject
 
 
 class CoinPriceListActivity : AppCompatActivity() {
 
     private lateinit var viewModel: CoinViewModel
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
     private lateinit var coinInfoAdapter: CoinInfoAdapter
 
     private val binding by lazy {
         ActivityCoinPriceListBinding.inflate(layoutInflater)
     }
 
+    private val component by lazy {
+        (application as CoinApp).component
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        component.inject(this)
+
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setupRecyclerView()
@@ -27,7 +38,7 @@ class CoinPriceListActivity : AppCompatActivity() {
     }
 
     private fun setupViewModel() {
-        viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
+        viewModel = ViewModelProvider(this, viewModelFactory)[CoinViewModel::class.java]
         viewModel.coinInfoList.observe(this) {
             coinInfoAdapter.submitList(it)
         }
